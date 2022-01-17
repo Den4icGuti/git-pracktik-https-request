@@ -1,0 +1,28 @@
+{
+  "name": "git-pracktik-https-request",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel  src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Den4icGuti/git-pracktik-https-request.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Den4icGuti/git-pracktik-https-request/issues"
+  },
+  "homepage": "https://github.com/Den4icGuti/git-pracktik-https-request#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "notiflix": "^3.2.2",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
+  }
+}
