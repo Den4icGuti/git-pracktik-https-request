@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
-    <form class="js-form form">
-      <input type="text" name="search">
-      <button type="submit">Search</button>
-    </form>
-    <div class="photo-card">
-      <ul class="js-cards"></ul>
+  <header class="header container">
+    <div class="container">
+      <form class="js-form form">
+        <input type="text" name="query">
+        <button type="submit">Search</button>
+      </form>
     </div>
-  </div>
- 
- 
+    <div class="photo-card">
+   
+    </div>
+  </header>
+  <button class="load-more" data-action="show">Показать еще</button>
+    <ul class="js-cards"></ul>
+  
+  
   <script src="./js/index.js"></script>
   <script src="./temlates/handle-card.hbs"></script>
 </body>

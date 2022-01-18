@@ -1,30 +1,31 @@
-import API from '../request-parameters/parameters';
 import getRefs from '../refs-parameters/refs';
-import renderCard  from '../render/render';
+import renderCard from '../temlates/handle-card.hbs'
 import Notiflix from 'notiflix';
+import '../css/style.css';
+import NewsApiService from '../news-service/news-api';
 
 
 const refs = getRefs();
 
+const newsApiService = new NewsApiService()
+
 refs.form.addEventListener('submit',onSearch)
 
+refs.btnload.addEventListener('click',onLoadMore)
 
 
 function onSearch(e) { 
   e.preventDefault();
   
-  const formEl = e.currentTarget;
-  const search = formEl.elements.search.value;
-  if (search === '') { 
+  newsApiService.query = e.currentTarget.elements.query.value;
+
+  if (newsApiService === '') { 
     Notiflix.Notify.warning('Поле должно быть заполнено');
     return;
   }
-
-  API.onFetch(search)
-    .then(render)
+  newsApiService.fetchApi();
 }
 
-function render(cat) { 
- const marcup = renderCard(cat)
- refs.ulList.insertAdjacentHTML('beforeend',marcup);
+function onLoadMore() { 
+  newsApiService.fetchApi();
 }
