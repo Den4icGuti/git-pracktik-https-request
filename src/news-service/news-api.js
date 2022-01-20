@@ -1,6 +1,7 @@
- const BASE_URL = 'https://newsapi.org/v2';
+const BASE_URL = 'https://newsapi.org/v2';
 const API_KEY = '8e47c669d5114f4a8a08b83a4431d50d';
- const options = {
+
+const options = {
       headers: {
         Authorization: API_KEY,
       },
@@ -13,9 +14,9 @@ export default class NewApiService {
   }
 
   fetchApi() { 
-    const URL = `${BASE_URL}/everything?q=${this.searchQery}&pageSize=6&page=${this.page}`;
-     return fetch(URL, options)
-      .then(r => r.json())
+    const url = `${BASE_URL}/everything?q=${this.searchQery}&pageSize=8&page=${this.page}`;
+     return fetch(url, options)
+      .then(response => response.json())
       .then(({ articles })=> {
         this.incrementPage();
         return articles;

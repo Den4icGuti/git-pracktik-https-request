@@ -1,8 +1,8 @@
-import getRefs from '../refs-parameters/refs';
-import renderCard from '../temlates/handle-card.hbs'
+import getRefs from './refs-parameters/refs';
+import renderCard from './temlates/handle-card.hbs'
 import Notiflix from 'notiflix';
-import '../css/style.css';
-import NewsApiService from '../news-service/news-api';
+import './css/style.css'
+import NewsApiService from './news-service/news-api';
 
 
 const refs = getRefs();
@@ -24,9 +24,13 @@ function onSearch(e) {
     Notiflix.Notify.info('Field must be filled');
     return;
   }
-   onClearContent();
+   
   newsApiService.resetPage();
-  newsApiService.fetchApi().then(onRenderContent);
+  newsApiService.fetchApi().then(articles => {
+    onClearContent();
+    onRenderContent(articles);
+  });
+  
 }
 
 function onLoadMore() { 

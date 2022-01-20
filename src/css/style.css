@@ -70,6 +70,7 @@ button {
   color: aliceblue;
   cursor: pointer;
   border-radius: 3px;
+  transition: background-color 250ms linear;
 }
 
 button:hover {
@@ -84,6 +85,8 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
+
+  transition: background-color 250ms linear;
 }
 
 .load-more:hover {
