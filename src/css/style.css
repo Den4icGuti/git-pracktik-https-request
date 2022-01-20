@@ -11,6 +11,10 @@ ul {
   margin: 0 auto;
 }
 
+img {
+  display: block;
+}
+
 .header {
   background-color: rgb(41, 72, 107);
   margin: 0 auto;
@@ -22,12 +26,39 @@ ul {
   padding-bottom: 10px;
 }
 
+a {
+  text-decoration: none;
+  font-size: 10px;
+  color: aqua;
+}
 .cards {
-  width: 300px;
-  height: 200px;
-  background-color: rgb(225, 227, 236);
-  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -30px;
+  margin-bottom: -30px;
+}
+
+.cards__item {
+  width: auto;
+  height: auto;
   padding: 15px;
+  background-color: rgb(56, 56, 148);
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  box-shadow: 2px 2px 19px 12px rgba(82, 130, 167, 0.2);
+}
+
+.cards {
+  transform: rotateY(360deg);
+}
+
+.text__item {
+  color: azure;
+  font-size: 10px;
 }
 
 button {
@@ -38,19 +69,23 @@ button {
   border: none;
   color: aliceblue;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 button:hover {
-  background-color: rgb(146, 62, 37);
+  background-color: rgb(52, 52, 122);
 }
 
 .load-more {
   width: 100px;
   height: 33px;
-  background-color: rgb(55, 55, 119);
   border-radius: 4px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
+}
+
+.load-more:hover {
+  background-color: rgb(52, 52, 122);
 }

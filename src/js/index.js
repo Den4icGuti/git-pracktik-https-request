@@ -9,6 +9,7 @@ const refs = getRefs();
 
 const newsApiService = new NewsApiService()
 
+
 refs.form.addEventListener('submit',onSearch)
 
 refs.btnload.addEventListener('click',onLoadMore)
@@ -16,16 +17,28 @@ refs.btnload.addEventListener('click',onLoadMore)
 
 function onSearch(e) { 
   e.preventDefault();
-  
+ 
   newsApiService.query = e.currentTarget.elements.query.value;
-
-  if (newsApiService === '') { 
-    Notiflix.Notify.warning('Поле должно быть заполнено');
+   
+  if (newsApiService.query === '') { 
+    Notiflix.Notify.info('Field must be filled');
     return;
   }
-  newsApiService.fetchApi();
+   onClearContent();
+  newsApiService.resetPage();
+  newsApiService.fetchApi().then(onRenderContent);
 }
 
 function onLoadMore() { 
-  newsApiService.fetchApi();
+  newsApiService.fetchApi().then(onRenderContent);
 }
+
+function onRenderContent(articles) { 
+  refs.ulList.insertAdjacentHTML('beforeend', renderCard(articles));
+ 
+}
+
+function onClearContent() { 
+  refs.ulList.innerHTML = '';
+}
+

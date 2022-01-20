@@ -1,5 +1,12 @@
-<div class ="cards">
-  <li class="item">
-   <p>Author:{{source.author}}</p>
-  </li>
-  </div>
+{{#each this}}
+ <li class="cards__item">
+<a href="{{url}}" target="_blank" class="text__item">
+  <article>
+     <img src="{{urlToImage}}" alt="" width="280">
+      <h2>{{title}}</h2>
+        <p>Pasted by: {{author}}</p>
+     <p>{{description}}</p>
+   </article>
+    </a>
+</li>
+ {{/each}}
