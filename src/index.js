@@ -18,6 +18,7 @@ const loadMoreBtn = new LoadBtnMore({
 console.log(loadMoreBtn);
 
 loadMoreBtn.show();
+loadMoreBtn.disable();
 
 refs.form.addEventListener('submit',onSearch)
 
