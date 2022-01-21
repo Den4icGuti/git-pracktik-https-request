@@ -1,6 +1,6 @@
-{{#each this}}
- <li class="cards__item">
-<a href="{{url}}" target="_blank" class="text__item">
+ {{#each this}}
+ <li class="cards__item container">
+  <a href="{{url}}" target="_blank" class="text__item">
   <article>
      <img src="{{urlToImage}}" alt="" width="280">
       <h2>{{title}}</h2>
@@ -10,3 +10,4 @@
    </article>
 </li>
  {{/each}}
+  

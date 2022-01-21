@@ -17,12 +17,9 @@ const loadMoreBtn = new LoadBtnMore({
 
 console.log(loadMoreBtn);
 
-loadMoreBtn.show();
-loadMoreBtn.disable();
-
 refs.form.addEventListener('submit',onSearch)
 
-loadMoreBtn.refs.button.addEventListener('click',onLoadMore)
+loadMoreBtn.refs.button.addEventListener('click',fetchArticle)
 
 
 function onSearch(e) { 
@@ -34,22 +31,24 @@ function onSearch(e) {
     Notiflix.Notify.info('Field must be filled');
     return;
   }
-   
+ 
+  loadMoreBtn.show();
   newsApiService.resetPage();
-  newsApiService.fetchApi().then(articles => {
-    onRenderContent(articles);
-    onClearContent();
-  });
-  
+  onClearContent();
+  onRenderContent();
+  fetchArticle();
 }
 
-function onLoadMore() { 
-  newsApiService.fetchApi().then(onRenderContent);
+function fetchArticle() { 
+    loadMoreBtn.disable();
+     newsApiService.fetchApi().then(articles => { 
+    onRenderContent(articles);
+    loadMoreBtn.enable();
+  });
 }
 
 function onRenderContent(articles) { 
-  refs.ulList.insertAdjacentHTML('beforeend', renderCard(articles));
- 
+   refs.ulList.insertAdjacentHTML('beforeend', renderCard(articles));
 }
 
 function onClearContent() { 

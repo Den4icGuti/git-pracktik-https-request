@@ -5,7 +5,7 @@ ul {
   list-style: none;
 }
 .container {
-  width: 1270px;
+  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -28,8 +28,8 @@ img {
 
 a {
   text-decoration: none;
-  font-size: 10px;
-  color: aqua;
+  font-size: 8px;
+  color: rgb(79, 118, 202);
 }
 .cards {
   display: flex;
@@ -40,20 +40,16 @@ a {
 }
 
 .cards__item {
-  width: auto;
+  width: 320px;
   height: auto;
   padding: 15px;
-  background-color: rgb(56, 56, 148);
+  background-color: rgb(150, 185, 194);
   border-radius: 4px;
   margin-left: 10px;
   margin-top: 10px;
   flex-basis: calc(100% / 4 - 30px);
-  margin-left: 30px;
+  margin-top: 30px;
   box-shadow: 2px 2px 19px 12px rgba(82, 130, 167, 0.2);
-}
-
-.cards {
-  transform: rotateY(360deg);
 }
 
 .text__item {
@@ -85,6 +81,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
+  margin-bottom: 35px;
 
   transition: background-color 250ms linear;
 
