@@ -1,7 +1,8 @@
 import getRefs from './refs-parameters/refs';
-import renderCard from './temlates/handle-card.hbs'
+import renderCard from './temlates/handle-card.hbs';
+import LoadBtnMore from './load-more/load-more-btn';
 import Notiflix from 'notiflix';
-import './css/style.css'
+import './css/style.css';
 import NewsApiService from './news-service/news-api';
 
 
@@ -9,10 +10,18 @@ const refs = getRefs();
 
 const newsApiService = new NewsApiService()
 
+const loadMoreBtn = new LoadBtnMore({
+  selector: '[data-action="show"]',
+  hidden: true,
+});
+
+console.log(loadMoreBtn);
+
+loadMoreBtn.show();
 
 refs.form.addEventListener('submit',onSearch)
 
-refs.btnload.addEventListener('click',onLoadMore)
+loadMoreBtn.refs.button.addEventListener('click',onLoadMore)
 
 
 function onSearch(e) { 
@@ -27,8 +36,8 @@ function onSearch(e) {
    
   newsApiService.resetPage();
   newsApiService.fetchApi().then(articles => {
-    onClearContent();
     onRenderContent(articles);
+    onClearContent();
   });
   
 }

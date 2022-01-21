@@ -14,8 +14,8 @@ export default class NewApiService {
   }
 
   fetchApi() { 
-    const url = `${BASE_URL}/everything?q=${this.searchQery}&pageSize=8&page=${this.page}`;
-     return fetch(url, options)
+    const URL = `${BASE_URL}/everything?q=${this.searchQery}&pageSize=4&page=${this.page}`;
+     return fetch(URL, options)
       .then(response => response.json())
       .then(({ articles })=> {
         this.incrementPage();
@@ -37,6 +37,7 @@ export default class NewApiService {
 
   set query(newQuery) { 
     this.searchQery = newQuery;
+  
   }
 
 }

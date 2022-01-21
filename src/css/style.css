@@ -57,11 +57,11 @@ a {
 }
 
 .text__item {
-  color: azure;
   font-size: 10px;
+  text-align: center;
 }
 
-button {
+.btn-serch {
   margin-left: 10px;
   background-color: rgb(51, 97, 139);
   border-radius: 4px;
@@ -73,12 +73,12 @@ button {
   transition: background-color 250ms linear;
 }
 
-button:hover {
+.btn-serch:hover {
   background-color: rgb(52, 52, 122);
 }
 
-.load-more {
-  width: 100px;
+.btn {
+  width: 150px;
   height: 33px;
   border-radius: 4px;
   display: block;
@@ -87,8 +87,28 @@ button:hover {
   margin-top: 60px;
 
   transition: background-color 250ms linear;
+
+  position: relative;
 }
 
-.load-more:hover {
+.btn.is-hidden {
+  display: none;
+}
+
+.btn .spinner .is-hidden {
+  display: none;
+}
+
+/* .load-more:hover {
   background-color: rgb(52, 52, 122);
+} */
+
+/* .label {
+  display: none;
+} */
+
+.spinner {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
 }
